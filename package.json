@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "clockwork": "^0.1.4",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "json-loader": "^0.5.4",
+    "net": "^1.0.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "redux-devtools": "^3.3.1",
+    "redux-react-router": "^1.0.0-beta3",
+    "redux-router": "^2.1.2",
+    "redux-thunk": "^2.1.0",
+    "tls": "0.0.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
