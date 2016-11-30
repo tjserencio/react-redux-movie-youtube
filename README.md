@@ -10,15 +10,7 @@ Step 1: Install required libraries
     
     npm install
 
-Step 2: Install Dependencies
-
-    npm install babel-core
-    npm install babel-loader
-    npm install babel-preset-react
-    npm install babel-preset-es2015
-    npm install axios
-    
-Step 3 : Run the application 
+Step 2 : Run the application 
 
     npm start
     
