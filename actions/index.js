@@ -33,22 +33,12 @@ export function requestMovieFromApi(search, isdetailed = false) {
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
       if(xmlHttp.responseText.indexOf('Movie not found!') == -1) {
-        if(isdetailed) {
-          dispatch(fetchMovie('MOVIE_DETAILS', xmlHttp.responseText));
-        } else {
-          dispatch(fetchMovie('SET_MOVIE', xmlHttp.responseText));
-        }
-
+        dispatch(fetchMovie((isdetailed ? 'MOVIE_DETAILS' : 'SET_MOVIE'), xmlHttp.responseText));
         dispatch(fetchMovie('LOAD_MOVIE', false));
       }
     }
 
-    if(isdetailed) {
-      xmlHttp.open("GET", 'http://www.omdbapi.com/?i=' + search + '&plot=full&tomatoes=true', true);
-    } else {
-      xmlHttp.open("GET", 'http://www.omdbapi.com/?s=' + search + '&plot=full&tomatoes=true', true);
-    }
-
+    xmlHttp.open("GET", 'http://www.omdbapi.com/?' + (isdetailed ? 'i' : 's') + '=' + search + '&plot=full&tomatoes=true', true);
     xmlHttp.send(null);
   }
 }

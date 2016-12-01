@@ -8,7 +8,7 @@ export default function movies(state = {isLoading: false, movie: null, moviedeta
       return Object.assign({}, state, {moviedetails: action.payload});
     case 'YOUTUBE_DETAILS':
       return Object.assign({}, state, {youtubedetails: action.payload});
+    default:
+      return state;
   }
-  
-  return state;
 }
