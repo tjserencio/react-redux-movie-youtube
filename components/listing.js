@@ -40,7 +40,7 @@ class Listing extends Component {
                 <div className="well container">
                   <div className="row">
                     {(!mov.hasOwnProperty('Search')) ? 'Nothing Found!' : mov.Search.map(function(listmovie, id) {
-                      return <MovieList listmovie={listmovie} key={id} />
+                      return (listmovie.Poster.indexOf("N/A") === 0) ? null : <MovieList listmovie={listmovie} key={id} />
                     })}
                   </div>
                 </div>
