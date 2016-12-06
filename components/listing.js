@@ -8,7 +8,7 @@ import MovieDetails from './moviedetails';
 class Listing extends Component {
   constructor(props) {
     super(props);
-    this.state = {searchtext: 'avatar'};
+    this.state = {searchtext: this.props.searchtext};
   }
 
   componentDidMount() {
@@ -58,7 +58,7 @@ class Listing extends Component {
 }
 
 function mapStateToProps(state) {
-  return {isLoading: state.isLoading, movie: state.movie, moviedetails: state.moviedetails, youtubedetails: state.youtubedetails}
+  return {isLoading: state.isLoading, movie: state.movie, moviedetails: state.moviedetails, youtubedetails: state.youtubedetails, searchtext: state.searchtext}
 }
 
 function mapDispatchToProps(dispatch) {

@@ -30,6 +30,10 @@ export function requestMovieFromApi(search, isdetailed = false) {
     dispatch(fetchMovie('LOAD_MOVIE', true));
     dispatch(fetchMovie('MOVIE_DETAILS', null));
 
+    if(!isdetailed) {
+      dispatch(fetchMovie('SET_SEARCHTEXT', search));
+    }
+
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
       if(xmlHttp.responseText.indexOf('Movie not found!') == -1) {
